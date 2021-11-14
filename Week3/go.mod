@@ -1,4 +1,4 @@
-module go_code/geekbang-golang
+module go_code/geekbang-golang/Week3
 
 go 1.17
 
