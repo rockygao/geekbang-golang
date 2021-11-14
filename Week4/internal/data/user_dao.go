@@ -2,12 +2,13 @@ package data
 
 import (
 	"errors"
+
 	"go_code/geekbang-golang/Week4/internal/model"
 )
 
 var (
-	ErrNotExit    = errors.New("no such record")
-	ErrAleadyExit = errors.New("recored with same id already exist")
+	ErrNotExist     = errors.New("no such record")
+	ErrAlreadyExist = errors.New("recored with same id already exist")
 )
 
 type UserDaoInf interface {
@@ -16,10 +17,10 @@ type UserDaoInf interface {
 }
 
 type InMemoUserDao struct {
-	user []model.User
+	users []model.User
 }
 
-func NewMemoUserDao() UserDaoInf {
+func NewInMemoUserDao() UserDaoInf {
 	return &InMemoUserDao{
 		users: make([]model.User, 0),
 	}
@@ -28,12 +29,11 @@ func NewMemoUserDao() UserDaoInf {
 func (dao *InMemoUserDao) Create(user model.User) (bool, error) {
 	for _, u := range dao.users {
 		if u.UserName == user.UserName {
-			return false, ErrAleadyExit
+			return false, ErrAlreadyExist
 		}
 	}
 	dao.users = append(dao.users, user)
 	return true, nil
-
 }
 
 func (dao *InMemoUserDao) QueryOne(username string) (model.User, error) {
@@ -42,5 +42,5 @@ func (dao *InMemoUserDao) QueryOne(username string) (model.User, error) {
 			return u, nil
 		}
 	}
-	return model.User{}, ErrAleadyExit
+	return model.User{}, ErrNotExist
 }
