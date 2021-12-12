@@ -88,7 +88,7 @@ func main() {
 			fmt.Println("g2 errgroup exit ...")
 		}
 		fmt.Println("when do here")
-		timeoutCtx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+		timeoutCtx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 		defer cancel()
 		fmt.Println("shutting down ....")
 		return server.Shutdown(timeoutCtx)

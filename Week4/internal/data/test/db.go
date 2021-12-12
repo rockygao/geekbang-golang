@@ -1,4 +1,4 @@
-package data
+package main
 
 import (
 	"context"
@@ -92,6 +92,7 @@ func main() {
 		return
 	}
 
-	var DB DB
+	var DB Data
+	DB.db.File.Query().All()
 	fmt.Println(DB)
 }
