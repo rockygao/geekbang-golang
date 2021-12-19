@@ -40,4 +40,4 @@ LengthFieldBasedFrameDecoder是一个基于长度解码器, 它是Netty提供的
 
 # 2、实现一个从 socket connection 中解码出 goim 协议的解码器。
 
-目前掌握的知识还不足，憋了好久，还是蒙圈
+目前掌握的知识还不足，憋了好久，网上找了一个,学习一下
