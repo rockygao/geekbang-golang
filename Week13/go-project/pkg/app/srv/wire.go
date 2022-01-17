@@ -16,7 +16,7 @@ import (
 
 func RunSrv() (*App, func(), error) {
 	panic(wire.Build(
-		configs.ProviderSet,
+		configs.NewConfig,
 		wire.Struct(new(App), "*"),
 		wire.Struct(new(Bootloader), "*"),
 
