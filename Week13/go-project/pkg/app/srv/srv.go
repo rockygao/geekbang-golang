@@ -15,7 +15,7 @@ type App struct {
 
 func (p *App) Run() error {
 	// Run("里面不指定端口号默认为8080")
-	p.Bootloader.HttpInitializer.Router.Run(":" + p.Config.GetString("app.port"))
+	p.Bootloader.HttpInitializer.Router.Run(p.Config.GetString("server.http.addr"))
 	p.afterStart()
 	return nil
 }
