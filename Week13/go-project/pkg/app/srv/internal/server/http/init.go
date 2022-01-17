@@ -2,7 +2,7 @@ package http
 
 import (
 	"context"
-	"go-project/pkg/app/srv/server/http/hdl"
+	"go-project/pkg/app/srv/internal/server/http/hdl"
 	"go-project/pkg/ginex"
 
 	"github.com/gin-gonic/gin"

@@ -1,4 +1,4 @@
-package v1
+package proto
 
 import (
 	proto "go-project/api/user/v1"
@@ -15,7 +15,7 @@ var Set = wire.NewSet(
 
 func HelloRpcClient(config *viper.Viper) proto.UserClient {
 	// 127.0.0.1:8889
-	conn, err := grpc.Dial(config.GetString("grpc.port"), grpc.WithInsecure())
+	conn, err := grpc.Dial(config.GetString("server.grpc.addr"), grpc.WithInsecure())
 	if err != nil {
 		grpclog.Fatalln(err)
 	}

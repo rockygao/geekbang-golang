@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"mojiorg/pkg/ginex/internal"
-	"mojiorg/pkg/ut"
+	"go-project/pkg/ginex/internal"
+	"go-project/pkg/ut"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"

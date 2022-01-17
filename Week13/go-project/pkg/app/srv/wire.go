@@ -4,7 +4,7 @@
 package srv
 
 import (
-	proto "go-project/api/user/v1"
+	proto "go-project/api/user"
 	"go-project/configs"
 	"go-project/pkg/app/srv/internal/server/grpc"
 	"go-project/pkg/app/srv/internal/server/http"

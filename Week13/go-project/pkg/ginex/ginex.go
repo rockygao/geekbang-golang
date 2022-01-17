@@ -1,7 +1,7 @@
 package ginex
 
 import (
-	"mojiorg/pkg/ginex/internal"
+	"go-project/pkg/ginex/internal"
 
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-contrib/sessions"
