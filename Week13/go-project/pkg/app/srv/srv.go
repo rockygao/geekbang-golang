@@ -2,6 +2,7 @@ package srv
 
 import (
 	"context"
+	"go-project/pkg/database"
 
 	"github.com/spf13/viper"
 )
@@ -9,6 +10,7 @@ import (
 type App struct {
 	Bootloader *Bootloader
 	Config     *viper.Viper
+	DB         *database.Data
 }
 
 func (p *App) Run() error {

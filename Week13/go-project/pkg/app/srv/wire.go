@@ -9,7 +9,7 @@ import (
 	"go-project/pkg/app/srv/internal/server/grpc"
 	"go-project/pkg/app/srv/internal/server/http"
 	"go-project/pkg/boot"
-	"go-project/pkg/databases"
+	"go-project/pkg/database"
 
 	"github.com/google/wire"
 )
@@ -17,6 +17,7 @@ import (
 func RunSrv() (*App, func(), error) {
 	panic(wire.Build(
 		configs.NewConfig,
+		database.InitDB,
 		wire.Struct(new(App), "*"),
 		wire.Struct(new(Bootloader), "*"),
 

@@ -1,4 +1,4 @@
-package proto
+package v1
 
 import (
 	proto "go-project/api/user/v1"

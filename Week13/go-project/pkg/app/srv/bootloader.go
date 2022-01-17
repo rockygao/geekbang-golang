@@ -4,6 +4,7 @@ import (
 	"context"
 	"go-project/pkg/app/srv/internal/server/grpc"
 	"go-project/pkg/app/srv/internal/server/http"
+	"go-project/pkg/boot"
 	"go-project/pkg/repo"
 )
 
@@ -14,8 +15,8 @@ type Bootloader struct {
 	GrpcInitializer *grpc.Initializer
 }
 
-func (p *Bootloader) getInitializer() []initializer.Initializer {
-	return []initializer.Initializer{
+func (p *Bootloader) getInitializer() []boot.Initializer {
+	return []boot.Initializer{
 		p.DbInitializer,
 		p.HttpInitializer,
 		p.GrpcInitializer,
@@ -23,5 +24,5 @@ func (p *Bootloader) getInitializer() []initializer.Initializer {
 }
 
 func (p *Bootloader) Boot(ctx context.Context) error {
-	return initializer.InitAll(ctx, p.getInitializer()...)
+	return boot.InitAll(ctx, p.getInitializer()...)
 }
