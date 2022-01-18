@@ -12,6 +12,7 @@ type UserService struct {
 
 func (h UserService) GetUserById(ctx context.Context, id *proto.IdRequest) (*proto.UserInfoResponse, error) {
 	resp := new(proto.UserInfoResponse)
-	resp.Id = 1
+	resp.Id = 2
+	resp.Mobile = "13988889999"
 	return resp, nil
 }
