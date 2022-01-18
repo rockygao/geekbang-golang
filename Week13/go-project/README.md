@@ -46,7 +46,8 @@ protoc -I ./ --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc
 
 ### 依赖注入
 
-通过服务中的每一层使用wire.NewSet方法暴露出来的构造器函数，然后在pkg/app/srv的wire.go文件中使用暴露的构造器函数中的依赖定义，对各层的服务进行组装
+通过服务中的每一层使用wire.NewSet方法暴露出来的构造器函数，然后在pkg/app/srv的wire.go文件中使用暴露的构造器函数中的依赖定义，对各层的服务进行组装，
+在pkg/app/srv目录执行`wire`命令 生成wire_gen.go依赖注入实现
 
 ### 使用说明
 
